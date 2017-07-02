@@ -1,0 +1,14 @@
+#Fat Jar Configuration File
+#Wed Jun 07 00:27:06 CST 2017
+onejar.license.required=false
+manifest.classpath=
+manifest.removesigners=false
+onejar.checkbox=true
+jarname=GradleSpringBoot_fat.jar
+manifest.mergeall=true
+manifest.mainclass=hello.SampleController
+manifest.file=<createnew>
+jarname.isextern=false
+onejar.expand=
+excludes=
+includes=
