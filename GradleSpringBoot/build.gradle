@@ -9,13 +9,16 @@
 
 // In this section you declare where to find the dependencies of your project
 buildscript {
+	ext {
+	     springBootVersion = '2.0.0.M1'
+	}
     repositories {
         maven{
         	url 'https://repo.spring.io/libs-milestone'
     	}
     }
     dependencies {
-        classpath("org.springframework.boot:spring-boot-gradle-plugin:2.0.0.M1")
+        classpath("org.springframework.boot:spring-boot-gradle-plugin:${springBootVersion}")
     }
 }
 
@@ -34,7 +37,7 @@ dependencies {
     // Use JUnit test framework
     testImplementation 'junit:junit:4.12'
     
-    compile("org.springframework.boot:spring-boot-starter-web:2.0.0.M1"){
+    compile("org.springframework.boot:spring-boot-starter-web:${springBootVersion}"){
     	exclude group: 'org.springframework.boot', module: 'spring-boot-starter-logging'
 	}	
     
@@ -46,4 +49,5 @@ dependencies {
 	compile("mysql:mysql-connector-java:6.0.5")
 	//dbpc
 	compile("commons-dbcp:commons-dbcp:1.4")
+	compile("org.springframework.boot:spring-boot-starter-security:${springBootVersion}")
 }

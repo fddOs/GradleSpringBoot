@@ -5,11 +5,12 @@ import org.slf4j.LoggerFactory;
 import org.springframework.boot.*;
 import org.springframework.boot.autoconfigure.*;
 import org.springframework.boot.autoconfigure.jdbc.DataSourceAutoConfiguration;
+import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
 @SpringBootApplication
 @EnableAutoConfiguration(exclude={DataSourceAutoConfiguration.class})
-
+@Controller
 public class SampleController {
 	private Logger logger = LoggerFactory.getLogger(SampleController.class);
 	@RequestMapping("/")
@@ -20,10 +21,10 @@ public class SampleController {
 		return "Hello World!";
 	}
 
-	@RequestMapping("/hello/{name}")
+	@RequestMapping("/hello")
 	@ResponseBody
-	public String hello(@PathVariable String name) {
-		return name;
+	public String hello(@RequestParam String name,@RequestParam String sex) {
+		return name+" "+sex;
 	}
 
 	public static void main(String[] args) throws Exception {
